@@ -1,0 +1,15 @@
+# -*- coding: utf-8 -*-
+from telebot import types
+keyboard = types.ReplyKeyboardMarkup(resize_keyboard=True)
+keyboard.add(*[types.KeyboardButton(name) for name in ['Понедельник📚', 'Вторник📚']])
+keyboard.add(*[types.KeyboardButton(name) for name in ['Среда📚', 'Четверг📚']])
+keyboard.add(*[types.KeyboardButton(name) for name in ['Пятница📚', 'Суббота📚']])
+keyboard.add('Хз какой день, куда мне идти?🤷‍♂')
+keyboard.add('Фотка расписания📸')
+keyboardphoto = types.InlineKeyboardMarkup()
+callback_button = types.InlineKeyboardButton(text="Фото расписания", callback_data="test")
+keyboardphoto.add(callback_button)
+keyboardMenu = types.ReplyKeyboardMarkup(resize_keyboard=True)
+keyboardMenu.add(*[types.KeyboardButton(name) for name in ['Secret', 'Secret']])
+keyboardMenu.add('Документы Соц. Пит.🍔')
+keyboardMenu.add('Расписание 🗒')
